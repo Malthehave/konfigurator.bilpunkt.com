@@ -1,0 +1,115 @@
+<li data-selection="colors" class="builder-step first-load">
+	<section class="cd-step-content">
+		<header>
+			<h1>Vælg din foretrukne farve</h1>
+			<span class="steps-indicator">Trin <b>2</b> af 4</span>
+		</header>
+
+		<ul class="cd-product-previews">
+			<li class="selected"><img src="img/Ligegyldig.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Hvid.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Grå.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Orange.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Brun.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Gul.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Rød.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Blå.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Grøn.jpg" alt="Bil Preview" class="product-preview"></li>
+			<li><img src="img/Sort.jpg" alt="Bil Preview" class="product-preview"></li>
+		</ul>
+
+		<ul class="cd-product-customizer">
+			<li data-content="Alle Farver" data-price="0" class="selected"><a data-color="allefarver" href="#0">Alle Farver</a></li>
+			<li data-content="Hvid" data-price="0"><a data-color="Hvid" href="#0">Hvid</a></li>
+			<li data-content="Grå" data-price="0"><a data-color="Grå" href="#0">Grå</a></li>
+			<li data-content="Orange" data-price="0"><a data-color="Orange" href="#0">Orange</a></li>
+			<li data-content="Brun" data-price="0"><a data-color="Brun" href="#0">Brun</a></li>
+			<li data-content="Gul" data-price="0"><a data-color="Gul" href="#0">Gul</a></li>
+			<li data-content="Rød" data-price="0"><a data-color="Rød" href="#0">Rød</a></li>
+			<li data-content="Blå" data-price="0"><a data-color="Blå" href="#0">Blå</a></li>
+			<li data-content="Grøn" data-price="0"><a data-color="Grøn" href="#0">Grøn</a></li>
+			<li data-content="Sort" data-price="0"><a data-color="Sort" href="#0">Sort</a></li>
+		</ul>
+	</section>
+</li>
+
+<li data-selection="accessories" class="builder-step first-load">
+	<section class="cd-step-content">
+		<header>
+			<h1>Ny eller brugt bil?</h1>
+			<span class="steps-indicator">Trin <b>3</b> af 4</span>
+		</header>
+
+		<center><h1>Vælg om du foretrækker en ny eller brugt bil</h1></center><br>
+		<ul class="accessories-list options-list">
+			<li class="js-option" data-price="1080">
+				<p>Ny bil</p>
+
+				<span class="price"></span>
+
+				<div class="check"></div>
+			</li>
+
+			<li class="js-option" data-price="1895">
+				<p>Brugt bil</p>
+
+				<span class="price"></span>
+
+				<div class="check"></div>
+			</li>
+
+		</ul>
+	</section>
+</li>
+
+<li data-selection="summary" class="builder-step first-load">
+	<section class="cd-step-content">
+		<header>
+			<h1>Oversigt</h1>
+			<span class="steps-indicator">Trin <b>4</b> af 4</span>
+		</header>
+
+		<ul class="summary-list">
+			<li>
+				<h2>Model</h2>
+
+				<img src="img/product01_col01.jpg" alt="Bil" class="product-preview">
+
+
+				<script type="text/javascript">
+					var bil = window.location.toString();
+					bil = bil.substring(bil.indexOf('bil=')+3);
+					var bil = bil.replace('=','');
+					var bil = bil.replace('%20',' ');
+					document.getElementById("insert").innerHTML = bil;
+					var engine = "stor";
+				</script>
+				<h3 id="insert"></h3>
+
+			</li>
+
+			<li data-summary="colors">
+				<h2>Farve</h2>
+
+				<span class="summary-color">
+					<em class="color-swatch" data-color="red"></em>
+					<em class="color-label">Rød</em>
+				</span>
+			</li>
+
+			<li data-summary="accessories">
+				<h2>Ny eller brugt bil?</h2>
+
+				<ul class="summary-accessories">
+					<li>
+						<p>Uconnect 6.5" farve touchscreen radio navigation system med Bluetooth &amp; DAB</p>
+					</li>
+
+					<li>
+						<p>Audio &amp; telefon styring på rettet</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+</li>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="dk" class="no-js">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99648599-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-99648599-2');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/Bilpunkt-Logo.png" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<title>Bil konfigurator | Bilpunkt</title>
+	<!-- sweetalert css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+	<!-- sweetalert js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
+
+	<script type="text/javascript">
+	function start() {
+		// Used to make title right
+		var bil = window.location.toString();
+		bil = bil.substring(bil.indexOf('bil=')+3);
+		// Used to chek if no car is assigned
+		if (bil == 'tp://konfigurator.bilpunkt.com/') {
+			window.location = "http://www.bilpunkt.com/biler";
+		}
+		var bil = bil.replace('=','');
+		var bil = bil.replace('%20',' ');
+		var update = bil + ' konfiguration | Bilpunkt.com'
+		var mobileheader = 'Vælg hvillken motor du ønsker i din ' + bil
+		var header = 'Bil konfigurator for ' + bil
+		document.getElementsByTagName('title')[0].innerHTML = update;
+		document.getElementById("head").innerHTML = header;
+		document.getElementById("mobileheader").innerHTML = mobileheader;
+
+	}
+	function goBack() {
+	    window.history.back();
+	}
+	</script>
+</head>
+<body onload="start()">
+
+<div class="cd-product-builder">
+	<header class="main-header">
+		<a href="https://www.bilpunkt.com"><img id="logo" src="img/Bilpunkt-Logo.png" alt="Bilpunkt Logo" title="Bilpunkt.com" style="height: 9.6rem;" align="right"></a>
+
+		<h1 id=head>Bil konfigurator</h1>
+
+		<nav class="cd-builder-main-nav disabled">
+			<ul>
+				<li class="active"><a href="#models">Motor</a></li>
+				<li><a href="#colors">Farve</a></li>
+				<li><a href="#accessories">Stand</a></li>
+				<li><a href="#summary">Oversigt</a></li>
+			</ul>
+		</nav>
+
+		<a href="javascript:goBack();" class="cd-nugget-info hide-on-mobile">Tilbage</a>
+	</header>
+
+	<div class="cd-builder-steps">
+		<ul>
+			<li data-selection="models" class="active builder-step">
+				<section class="cd-step-content">
+					<header>
+						<h1 id=mobileheader>Vælg hvillken motor du ønsker i din bil</h1>
+						<br>
+						<span class="steps-indicator">Trin <b>1</b> af 4</span>
+					</header>
+
+					<a href="javascript:goBack();" class="cd-nugget-info hide-on-desktop">Tilbage</a>
+
+					<ul class="models-list options-list cd-col-2">
+						<li class="js-option js-radio" data-price="42400" data-model="lille_motor">
+							<span class="name">Lille motor</span>
+							<img src="img/engine.png" alt="Lille Motor">
+							<span class="price">Omkring 50-100 hk</span>
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="140700" data-model="mellem_motor">
+							<span class="name">Mellem motor</span>
+							<img src="img/engine.png" alt="Mellem motor">
+							<span class="price">Omkring 100-200 hk</span>
+							<div class="radio"></div>
+						</li>
+
+						<li class="js-option js-radio" data-price="140700" data-model="stor_motor">
+							<span class="name">Stor motor</span>
+							<img src="img/engine.png" alt="Stor motor">
+							<span class="price">> 200 hk</span>
+							<div class="radio"></div>
+						</li>
+					</ul>
+				</section>
+			</li>
+			<!-- additional content will be inserted using ajax -->
+		</ul>
+	</div>
+
+	<footer class="cd-builder-footer disabled step-1">
+		<div class="selected-product">
+			<img src="img/engine.png" alt="Product preview">
+
+			<!-- <div class="tot-price">
+				<span>Total</span>
+				<span class="total">$<b>0</b></span>
+			</div> -->
+		</div>
+
+		<nav class="cd-builder-secondary-nav">
+			<ul>
+				<li class="next nav-item">
+					<ul>
+						<li class="visible"><a href="#0">Farve</a></li>
+						<li><a href="#0">Stand</a></li>
+						<li><a href="#0">Oversigt</a></li>
+						<li class="buy"><a href="" onpress="mins()">Hent tilbud!</a></li>
+					</ul>
+				</li>
+				<li class="prev nav-item">
+					<ul>
+						<li class="visible"><a href="#0">Motor</a></li>
+						<li><a href="#0">Motor</a></li>
+						<li><a href="#0">Farve</a></li>
+						<li><a href="#0">Stand</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<span class="alert">Vælg venligst en motor først!</span>
+	</footer>
+</div>
+
+<script>
+	var model = modelType;
+</script>
+
+<script>
+function mins() {
+	Swal.fire('Any fool can use a computer')
+}
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+</script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+</body>
+</html>
